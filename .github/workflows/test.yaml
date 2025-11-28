@@ -16,3 +16,9 @@ jobs:
     - name: Good bye!
       run: echo "Goodbye"
       shell: bash
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump github context
+        run: echo '${{ toJSON(github.context.event) }} | jq'
+        shell: bash
