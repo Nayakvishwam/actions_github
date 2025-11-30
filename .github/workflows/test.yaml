@@ -17,6 +17,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            This is a multi-line test comment
+            This is a multi-line test comment,
             - With GitHub **Markdown**
             - Created by create-or-update-comment
