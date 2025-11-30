@@ -5,6 +5,12 @@ on:
     types: [opened]
 
 jobs:
+  good:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Good bye!
+        run: echo "Goodbye"
+
   comment-with-action:
     runs-on: ubuntu-latest
     steps:
@@ -14,9 +20,11 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
-            This is a multi-line test comment,
-            - With GitHub **Markdown**
-            - Created by create-or-update-comment
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
